@@ -1,0 +1,6 @@
+title: Matt Spana
+description: "Builder, thinker, maker"
+url: "https://spana.io"
+baseurl: ""
+markdown: kramdown
+permalink: /blog/:year/:month/:day/:title/

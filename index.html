@@ -1,0 +1,24 @@
+---
+layout: default
+title: Home
+---
+
+<section class="hero">
+  <h1>Hi, I'm <span class="highlight">Matt</span>.</h1>
+  <p>I'm building <a href="https://aristotle.games">Aristotle</a>, an AI-powered game engine. Columbia grad student, software engineer, and believer that tools should get out of your way.</p>
+</section>
+
+<section class="posts-section">
+  <h2>Writing</h2>
+  <ul class="posts-list">
+    {% for post in site.posts %}
+    <li>
+      <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+      <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %d, %Y" }}</time>
+    </li>
+    {% endfor %}
+    {% if site.posts.size == 0 %}
+    <li style="color: var(--text-secondary);">No posts yet.</li>
+    {% endif %}
+  </ul>
+</section>

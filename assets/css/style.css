@@ -1,0 +1,255 @@
+/* Spana.io Personal Site */
+
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;1,400&family=Source+Sans+3:wght@400;500;600&display=swap');
+
+:root {
+  --bg-dark: #0a1410;
+  --bg-section: #111f1a;
+  --cream: #f7f3e8;
+  --cream-muted: #d4cfc0;
+  --gold: #c9a227;
+  --gold-light: #e3c565;
+  --green: #2d5a47;
+  --green-light: #3d7a5f;
+  --text-primary: #f7f3e8;
+  --text-secondary: #9ca89f;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Source Sans 3', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: var(--bg-dark);
+  color: var(--text-primary);
+  line-height: 1.7;
+}
+
+/* Header */
+.site-header {
+  padding: 2rem;
+  border-bottom: 1px solid var(--green);
+}
+
+.site-header nav {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.site-header .name {
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1.5rem;
+  color: var(--cream);
+  text-decoration: none;
+}
+
+.site-header .nav-links a {
+  color: var(--text-secondary);
+  text-decoration: none;
+  margin-left: 2rem;
+  transition: color 0.2s;
+}
+
+.site-header .nav-links a:hover {
+  color: var(--gold);
+}
+
+/* Hero */
+.hero {
+  padding: 6rem 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.hero h1 {
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 3rem;
+  color: var(--cream);
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+}
+
+.hero h1 .highlight {
+  color: var(--gold);
+}
+
+.hero p {
+  font-size: 1.25rem;
+  color: var(--text-secondary);
+  max-width: 600px;
+  line-height: 1.8;
+}
+
+.hero p a {
+  color: var(--gold);
+  text-decoration: none;
+  border-bottom: 1px solid var(--gold);
+}
+
+.hero p a:hover {
+  color: var(--gold-light);
+  border-color: var(--gold-light);
+}
+
+/* Posts List */
+.posts-section {
+  padding: 4rem 2rem;
+  background: var(--bg-section);
+}
+
+.posts-section h2 {
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1.75rem;
+  color: var(--cream);
+  max-width: 900px;
+  margin: 0 auto 2rem;
+}
+
+.posts-list {
+  max-width: 900px;
+  margin: 0 auto;
+  list-style: none;
+}
+
+.posts-list li {
+  padding: 1.5rem 0;
+  border-bottom: 1px solid var(--green);
+}
+
+.posts-list li:last-child {
+  border-bottom: none;
+}
+
+.posts-list a {
+  color: var(--text-primary);
+  text-decoration: none;
+  font-size: 1.25rem;
+  transition: color 0.2s;
+}
+
+.posts-list a:hover {
+  color: var(--gold);
+}
+
+.posts-list time {
+  display: block;
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  margin-top: 0.5rem;
+}
+
+/* Post Page */
+.post-nav {
+  padding: 1.5rem 2rem;
+  border-bottom: 1px solid var(--green);
+}
+
+.post-nav a {
+  color: var(--text-secondary);
+  text-decoration: none;
+}
+
+.post-nav a:hover {
+  color: var(--gold);
+}
+
+.post {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+}
+
+.post-header h1 {
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 2.5rem;
+  color: var(--cream);
+  margin-bottom: 1rem;
+  line-height: 1.3;
+}
+
+.post-header time {
+  display: block;
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  margin-bottom: 3rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--green);
+}
+
+.post-content {
+  font-size: 1.125rem;
+  line-height: 1.9;
+}
+
+.post-content p {
+  margin-bottom: 1.5rem;
+  color: var(--cream-muted);
+}
+
+.post-content h2 {
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1.5rem;
+  color: var(--cream);
+  margin: 3rem 0 1.5rem;
+}
+
+.post-content a {
+  color: var(--gold);
+}
+
+.post-content strong {
+  color: var(--cream);
+  font-weight: 600;
+}
+
+.post-content em {
+  font-style: italic;
+  color: var(--cream);
+}
+
+/* Footer */
+.site-footer {
+  padding: 3rem 2rem;
+  text-align: center;
+  border-top: 1px solid var(--green);
+}
+
+.site-footer a {
+  color: var(--text-secondary);
+  text-decoration: none;
+  margin: 0 1rem;
+  font-size: 0.875rem;
+}
+
+.site-footer a:hover {
+  color: var(--gold);
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero p {
+    font-size: 1.125rem;
+  }
+
+  .post-header h1 {
+    font-size: 1.75rem;
+  }
+
+  .site-header .nav-links a {
+    margin-left: 1rem;
+  }
+}
