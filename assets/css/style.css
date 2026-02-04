@@ -1,12 +1,15 @@
-/* Spana.io Minimal Landing */
+/* Spana.io - Refined */
 
-@import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;1,400&display=swap');
 
 :root {
-  --british-racing-green: #004225;
-  --cream: #f5f5dc;
-  --gold: #d4af37;
-  --text-dark: #1a1a1a;
+  --green: #004225;
+  --green-muted: #1a5c3a;
+  --cream: #faf8f3;
+  --cream-dark: #f0ebe0;
+  --gold: #b8960c;
+  --text-primary: #1a2e23;
+  --text-secondary: #4a5d52;
 }
 
 * {
@@ -21,83 +24,91 @@ html, body {
 
 body {
   font-family: 'Crimson Pro', Georgia, serif;
+  background: var(--cream);
+  color: var(--text-primary);
   display: flex;
   flex-direction: column;
   min-height: 100vh;
 }
 
-/* Green Header Section */
-.header-section {
-  background: var(--british-racing-green);
-  padding: 4rem 2rem;
-  text-align: center;
-}
-
-.header-section h1 {
-  font-size: 3.5rem;
-  font-weight: 400;
-  color: var(--cream);
-  letter-spacing: 0.1em;
-}
-
-/* Cream Main Section */
-.main-section {
-  background: var(--cream);
+/* Main content wrapper */
+.content {
   flex: 1;
-  padding: 4rem 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding: 4rem 2rem;
+  text-align: center;
 }
 
-.main-section p {
-  max-width: 600px;
-  font-size: 1.25rem;
-  line-height: 1.8;
-  color: var(--text-dark);
-  text-align: center;
+/* Title */
+.content h1 {
+  font-size: 4rem;
+  font-weight: 400;
+  color: var(--green);
+  letter-spacing: 0.05em;
   margin-bottom: 2rem;
 }
 
-.main-section a {
-  color: var(--british-racing-green);
+/* Subtle gold underline accent */
+.content h1::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 2px;
+  background: var(--gold);
+  margin: 1.5rem auto 0;
+}
+
+.content p {
+  max-width: 480px;
+  font-size: 1.25rem;
+  line-height: 1.9;
+  color: var(--text-secondary);
+  margin-bottom: 2.5rem;
+}
+
+.content .link {
+  color: var(--green);
   text-decoration: none;
   font-size: 1.125rem;
-  border-bottom: 1px solid var(--british-racing-green);
+  padding-bottom: 2px;
+  border-bottom: 1px solid var(--gold);
   transition: color 0.2s, border-color 0.2s;
 }
 
-.main-section a:hover {
-  color: var(--gold);
-  border-color: var(--gold);
+.content .link:hover {
+  color: var(--green-muted);
+  border-color: var(--green-muted);
 }
 
-/* Gold Accent Footer */
-.footer-section {
-  background: var(--gold);
+/* Footer */
+footer {
   padding: 2rem;
   text-align: center;
+  border-top: 1px solid var(--cream-dark);
 }
 
-.footer-section a {
-  color: var(--text-dark);
+footer a {
+  color: var(--text-secondary);
   text-decoration: none;
   margin: 0 1rem;
   font-size: 0.875rem;
+  transition: color 0.2s;
 }
 
-.footer-section a:hover {
-  color: var(--british-racing-green);
+footer a:hover {
+  color: var(--gold);
 }
 
 /* Responsive */
 @media (max-width: 600px) {
-  .header-section h1 {
-    font-size: 2.5rem;
+  .content h1 {
+    font-size: 2.75rem;
   }
 
-  .main-section p {
+  .content p {
     font-size: 1.125rem;
   }
 }
