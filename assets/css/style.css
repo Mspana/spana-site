@@ -1,15 +1,17 @@
-/* Spana.io - Refined */
+/* Spana.io - Regal Family Site */
 
-@import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Cormorant+SC:wght@400;500&display=swap');
 
 :root {
-  --green: #004225;
-  --green-muted: #1a5c3a;
-  --cream: #faf8f3;
-  --cream-dark: #f0ebe0;
-  --gold: #b8960c;
+  --green-deep: #0d2818;
+  --green: #1a4d2e;
+  --green-muted: #2d6a4f;
+  --cream: #fdfbf7;
+  --cream-warm: #f5f0e6;
+  --gold: #996515;
+  --gold-light: #c9a227;
   --text-primary: #1a2e23;
-  --text-secondary: #4a5d52;
+  --text-secondary: #5a6e62;
 }
 
 * {
@@ -23,12 +25,25 @@ html, body {
 }
 
 body {
-  font-family: 'Crimson Pro', Georgia, serif;
+  font-family: 'Cormorant Garamond', Georgia, serif;
   background: var(--cream);
   color: var(--text-primary);
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+}
+
+/* Subtle border frame */
+body::before {
+  content: '';
+  position: fixed;
+  top: 1.5rem;
+  left: 1.5rem;
+  right: 1.5rem;
+  bottom: 1.5rem;
+  border: 1px solid var(--cream-warm);
+  pointer-events: none;
+  z-index: 10;
 }
 
 /* Main content wrapper */
@@ -38,64 +53,70 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 4rem 2rem;
+  padding: 6rem 2rem;
   text-align: center;
 }
 
-/* Title */
+/* Title with small caps */
 .content h1 {
-  font-size: 4rem;
+  font-family: 'Cormorant SC', Georgia, serif;
+  font-size: 4.5rem;
   font-weight: 400;
-  color: var(--green);
-  letter-spacing: 0.05em;
-  margin-bottom: 2rem;
+  color: var(--green-deep);
+  letter-spacing: 0.2em;
+  margin-bottom: 1rem;
 }
 
-/* Subtle gold underline accent */
+/* Ornamental divider */
 .content h1::after {
-  content: '';
+  content: '✦';
   display: block;
-  width: 60px;
-  height: 2px;
-  background: var(--gold);
-  margin: 1.5rem auto 0;
+  font-size: 1rem;
+  color: var(--gold);
+  margin: 2rem auto;
+  letter-spacing: 0;
 }
 
 .content p {
-  max-width: 480px;
-  font-size: 1.25rem;
-  line-height: 1.9;
+  max-width: 440px;
+  font-size: 1.375rem;
+  font-weight: 400;
+  line-height: 2;
   color: var(--text-secondary);
-  margin-bottom: 2.5rem;
+  margin-bottom: 3rem;
+  font-style: italic;
 }
 
 .content .link {
+  font-family: 'Cormorant SC', Georgia, serif;
   color: var(--green);
   text-decoration: none;
-  font-size: 1.125rem;
-  padding-bottom: 2px;
-  border-bottom: 1px solid var(--gold);
-  transition: color 0.2s, border-color 0.2s;
+  font-size: 1rem;
+  letter-spacing: 0.15em;
+  padding-bottom: 4px;
+  border-bottom: 1px solid var(--gold-light);
+  transition: all 0.3s ease;
 }
 
 .content .link:hover {
-  color: var(--green-muted);
-  border-color: var(--green-muted);
+  color: var(--gold);
+  border-color: var(--gold);
 }
 
 /* Footer */
 footer {
-  padding: 2rem;
+  padding: 2.5rem;
   text-align: center;
-  border-top: 1px solid var(--cream-dark);
 }
 
 footer a {
+  font-family: 'Cormorant SC', Georgia, serif;
   color: var(--text-secondary);
   text-decoration: none;
-  margin: 0 1rem;
-  font-size: 0.875rem;
-  transition: color 0.2s;
+  margin: 0 1.5rem;
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  transition: color 0.3s ease;
 }
 
 footer a:hover {
@@ -104,11 +125,23 @@ footer a:hover {
 
 /* Responsive */
 @media (max-width: 600px) {
+  body::before {
+    top: 1rem;
+    left: 1rem;
+    right: 1rem;
+    bottom: 1rem;
+  }
+
   .content h1 {
     font-size: 2.75rem;
+    letter-spacing: 0.15em;
   }
 
   .content p {
     font-size: 1.125rem;
+  }
+
+  footer a {
+    margin: 0 0.75rem;
   }
 }
